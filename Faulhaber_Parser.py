@@ -52,7 +52,7 @@ def shutdown(id):
     return [commands.controlword+id,[6,0]]
 
 def enable(id):
-    controlword = controlword = create_Controlword(states.enable_opration,False)
+    controlword = create_Controlword(states.enable_opration,False)
     return [commands.controlword+id,controlword]
 
 def create_Controlword(state, start, relative = True, imidiate = True):#state is bit 0,1,2,3 start is bit 4 ,relative is bit 6, imidiate is bit 5, bit 7 is reset fault errors
