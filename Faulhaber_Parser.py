@@ -57,8 +57,7 @@ def enable(id):
 
 def create_Controlword(state, start, relative = True, imidiate = True):#state is bit 0,1,2,3 start is bit 4 ,relative is bit 6, imidiate is bit 5, bit 7 is reset fault errors
     word = state+start*(2**4)+imidiate*(2**5)+relative*(2**6)
-    word.to_bytes(2,byteorder='little')
-    return word
+    return word.to_bytes(2,byteorder='little')
 
 def position_setpoint(id, setpoint, relative = True, comand = commands.set_position,imidiate = True):
     controlword = create_Controlword(states.enable_opration,imidiate,relative)
@@ -66,5 +65,4 @@ def position_setpoint(id, setpoint, relative = True, comand = commands.set_posit
     return frame
 
 def int_To_Bytearray(number, size = 4): #converts int to 32bit byte array to use as setpoint
-    number.to_bytes(size, byteorder='little', signed=True)
-    return number
+    return number.to_bytes(size, byteorder='little', signed=True)

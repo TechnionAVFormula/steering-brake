@@ -2,7 +2,8 @@ from canlib import canlib, Frame
 ch = None
 emptyFrame = Frame(0,0)
 def Init(channel=0):
-    ch = canlib.openChannel(channel)
+    global ch 
+    ch = canlib.openChannel(channel, canlib.Open.ACCEPT_VIRTUAL)
     ch.setBusOutputControl(canlib.canDRIVER_NORMAL)
     ch.setBusParams(canlib.canBITRATE_1M)
     ch.busOn()
