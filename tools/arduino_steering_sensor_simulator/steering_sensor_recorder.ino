@@ -1,3 +1,7 @@
+#ifndef FILE_LOADED
+#define FILE_LOADED
+
+
 // define pins
 #define sensorA 2
 #define sensorB 3
@@ -65,3 +69,6 @@ void recordSensor() {
     recordA += String(probA) + ",";
     recordB += String(probB) + ",";
 }
+
+
+#endif //FILE_LOADED

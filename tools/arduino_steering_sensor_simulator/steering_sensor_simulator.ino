@@ -1,3 +1,6 @@
+#ifndef FILE_LOADED
+#define FILE_LOADED
+
 
 // define pins
 #define sensorA 2
@@ -115,3 +118,5 @@ String toString(const int* arr, const int size) {
     }
     return string;
 }
+
+#endif //FILE_LOADED
