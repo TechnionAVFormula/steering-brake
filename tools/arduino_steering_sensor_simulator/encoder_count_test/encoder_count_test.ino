@@ -1,6 +1,3 @@
-#ifndef FILE_LOADED
-#define FILE_LOADED
-
 
 #include <Encoder.h>
 
@@ -40,6 +37,3 @@ void loop() {
     }
         
 }
-
-
-#endif //FILE_LOADED

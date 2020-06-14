@@ -1,6 +1,3 @@
-#ifndef FILE_LOADED
-#define FILE_LOADED
-
 
 #include <Encoder.h>
 
@@ -72,6 +69,3 @@ void loop() {
     analogWrite(An1, V_STEPS*position/RANGE;
         
 }
-
-
-#endif //FILE_LOADED
