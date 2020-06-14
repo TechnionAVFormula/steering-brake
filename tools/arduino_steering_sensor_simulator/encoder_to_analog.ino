@@ -34,7 +34,7 @@ void setup() {
     pinMode(An1,OUTPUT);
     pinMode(An2,OUTPUT);
     pinMode(An3,INPUT);
-    //Serial.println("Basic Encoder Test:");
+    Serial.println("Encoder To Analog Sketch:");
 }
 
 long oldPosition  = -999;
@@ -42,6 +42,8 @@ unsigned long previousMillis = millis();
 bool error = false;
 
 void loop() {
+    //Serial.println(analogRead(An3));
+
     // turn off error led after 2 sec
     if(error) {
         unsigned long currentMillis = millis();
