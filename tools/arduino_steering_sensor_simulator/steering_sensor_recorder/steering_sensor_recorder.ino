@@ -1,6 +1,3 @@
-#ifndef FILE_LOADED
-#define FILE_LOADED
-
 
 // define pins
 #define sensorA 2
@@ -71,4 +68,3 @@ void recordSensor() {
 }
 
 
-#endif //FILE_LOADED

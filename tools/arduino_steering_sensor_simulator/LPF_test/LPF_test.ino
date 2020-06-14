@@ -1,6 +1,3 @@
-#ifndef FILE_LOADED
-#define FILE_LOADED
-
 
 // define pins
 #define ledA 12
@@ -31,6 +28,3 @@ void loop() {
     Serial.println(analogRead(An3));
     
 }
-
-
-#endif //FILE_LOADED
