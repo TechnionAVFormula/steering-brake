@@ -38,11 +38,11 @@ class commands:
 
 class states:
     shutdown = 0b0110 
-    switch_on = 0b1110
+    switch_on = 0b0111
     disable_voltage = 0b0000 
-    quick_stop = 0b0100 
-    disable_oparation =0b1110 
-    enable_opration = 0b1110
+    quick_stop = 0b0010 
+    disable_oparation =0b0111 
+    enable_opration = 0b1111
     fault_reset = 0b0000
 
 def operasional(id):
@@ -52,11 +52,16 @@ def shutdown(id):
     return [commands.controlword+id,[6,0]]
 
 def enable(id):
-    controlword = create_Controlword(states.enable_opration,False)
+    controlword = create_Controlword(states.enable_opration, False)
+    return [commands.controlword+id,controlword]
+
+# set bit 4 of control word to 0
+def enableNextSetPoint(id, relative = True, imidiate = True):
+    controlword = create_Controlword(states.enable_opration, False, relative, imidiate)
     return [commands.controlword+id,controlword]
 
 def create_Controlword(state, start, relative = True, imidiate = True):#state is bit 0,1,2,3 start is bit 4 ,relative is bit 6, imidiate is bit 5, bit 7 is reset fault errors
-    word = state+start*(2**4)+imidiate*(2**5)+relative*(2**6)
+    word = state + start*(2**4) + imidiate*(2**5) + relative*(2**6)
     return word.to_bytes(2,byteorder='little')
 
 def position_setpoint(id, setpoint, relative = True, comand = commands.set_position,imidiate = True):
