@@ -1,4 +1,4 @@
-import Maneger as maneger
+import Manager as maneger
 import Faulhaber_Parser as parser
 
 #wake up
