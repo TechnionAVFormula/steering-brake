@@ -1,4 +1,4 @@
-import Maneger as maneger
+#import Maneger as maneger
 import Faulhaber_Parser as parser
 
 #wake up
@@ -10,3 +10,4 @@ def wakeup(id):
 #send position
     #call parser to set postion 
     #check wake up
+#print("the answer is:", wakeup(8))
