@@ -66,17 +66,17 @@ def position_setpoint(id, setpoint, relative = True, comand = commands.set_posit
     return frame
 
 def int_To_Bytearray(number, size = 4): #converts int to 32bit byte array to use as setpoint
-    number.to_bytes(size, byteorder='little', signed=True)
-    return number
-#print("operasional", operasional(3))
-#print("sut down", shutdown(3))
-#print("enable", enable(3))
+    word = number.to_bytes(size, byteorder='little', signed=True)
+    return word
+# print("operasional", operasional(3))
+# print("sut down", shutdown(3))
+# print("enable", enable(3))
 # print("create_Controlword", create_Controlword(states.enable_opration,True))
 # print("create_Controlword", create_Controlword(states.enable_opration,False))
 # print("create_Controlword", create_Controlword(states.enable_opration,True,False,False))
 # print("create_Controlword", create_Controlword(states.enable_opration,False,False,True))
-print("position_setpoint", position_setpoint(3,1577))
-print("position_setpoint", position_setpoint(3,1577,False))
-print("position_setpoint", position_setpoint(3,1577,False,commands.set_position,False))
-print("position_setpoint", position_setpoint(3,1577,True,commands.set_position,False))
-# #print("int_To_Bytearray", int_To_Bytearray(3))
+# print("position_setpoint", position_setpoint(3,1577))
+# print("position_setpoint", position_setpoint(3,1577,False))
+# print("position_setpoint", position_setpoint(3,1577,False,commands.set_position,False))
+# print("position_setpoint", position_setpoint(3,1577,True,commands.set_position,False))
+#print("int_To_Bytearray", int_To_Bytearray(5000))
