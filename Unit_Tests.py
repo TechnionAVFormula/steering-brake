@@ -21,3 +21,4 @@ test(Faulhaber_Parser.position_setpoint(3,1577),[771, 1703],"foulhaber_parser",7
 test(Faulhaber_Parser.position_setpoint(3,1577,False),[771, 1639],"foulhaber_parser",8)
 test(Faulhaber_Parser.position_setpoint(3,1577,False,Faulhaber_Parser.commands.set_position,False),[771, 1623],"foulhaber_parser",9)
 test(Faulhaber_Parser.position_setpoint(3,1577,True,Faulhaber_Parser.commands.set_position,False),[771, 1687],"foulhaber_parser",10)
+test(Faulhaber_Parser.int_To_Bytearray(5000),'\x88\x13\x00\x00',"foulhaber_parser",11)
