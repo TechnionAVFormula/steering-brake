@@ -1,8 +1,9 @@
-import sys
+#import sys
 sys.path.append("C:/temp/Canlib_SDK_v5.9/Samples/Python")
 from canlib import canlib, Frame
 from canlib.canlib import ChannelData
 import time
+import Faulhaber_Parser as parser
 
 
 
@@ -27,7 +28,7 @@ ch.write_raw(512+1,[6,0])
 #pp = [0x1E,00,0,0] # set position 30 angle
 #pp = [0xFF,0xFF,0xFF,0xE2] # set position -30 angle
 
-
+print(parser.commands.set_position + 1)
 for i in range(9):
    controlword = [127,0] # move immidiatly and relative
    if i == 0:

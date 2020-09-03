@@ -67,6 +67,10 @@ def position_setpoint(id, setpoint, relative = True, comand = commands.set_posit
 def int_To_Bytearray(number, size = 4): #converts int to 32bit byte array to use as setpoint
     word = number.to_bytes(size, byteorder='little', signed=True)
     return word
+
+# def read_position():
+#     return
+
 # print("operasional", operasional(3))
 # print("sut down", shutdown(3))
 # print("enable", enable(3))

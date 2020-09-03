@@ -1,6 +1,7 @@
 import Kvaser_Comunicator as kvaser
 import Faulhaber_Comunicator as faulhaber
 import Faulhaber_Parser as parser
+import Stearing
 
 #motor controller types
 FAULHABER = 1
@@ -59,6 +60,16 @@ def send(identity,frame,computer = CURRENT_COMPUTER):
         wakeup(identity)
     if(computer == KVASER):
         kvaser.send(frame)
+def readPDO(computer = CURRENT_COMPUTER):
+    if(did_init == True):    
+        if(computer == KVASER):
+            income_messege = kvaser.read()
+        sender_id  = income_messege.id[:1]#id CONVERT????Also maybe the id part is reversed!!!!!
+        if(sender_id == components['Stearing'][1]):
+            Stearing.Message[0] = income_messege.id
+            Stearing.Message[1] = income_messege.data
+            Stearing.disect_messege
+    
 #tenssy stuff in here
 #if i recive from stearing use faulhaber if i recive from otehr thing use tensy
 #pass on request to correct motorcontroller

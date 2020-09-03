@@ -11,4 +11,7 @@ def Init(channel=0):
 def send(messege):
     frame = Frame(messege[0],messege[1])
     ch.write(frame)
+def read():
+    return ch.read()
+
 #send messeges using canlib librareys
